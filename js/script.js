@@ -431,20 +431,21 @@ function copiarPix() {
   });
 }
 
+// ===== Menu ativo + scroll suave (versão corrigida) =====
+
+// ===== Menu ativo + scroll suave (versão corrigida) =====
+
+const header = document.querySelector('header');
 const secoes = document.querySelectorAll('section[id]');
 const linksMenu = document.querySelectorAll('nav a');
 
-function atualizarMenuAtivo() {
-  const offset = 130; // um pouco abaixo do header fixo (ajuste se o header tiver outra altura)
-  let idAtivo = secoes[0].getAttribute('id');
+let rolagemProgramada = false; // trava a detecção automática durante o clique
 
-  secoes.forEach(secao => {
-    const top = secao.getBoundingClientRect().top;
-    if (top <= offset) {
-      idAtivo = secao.getAttribute('id');
-    }
-  });
+function getHeaderOffset() {
+  return header.offsetHeight;
+}
 
+function marcarLinkAtivo(idAtivo) {
   linksMenu.forEach(link => {
     const estaAtivo = link.getAttribute('href') === `#${idAtivo}`;
     link.classList.toggle('ativo', estaAtivo);
@@ -456,6 +457,63 @@ function atualizarMenuAtivo() {
   });
 }
 
-window.addEventListener('scroll', atualizarMenuAtivo);
-window.addEventListener('load', atualizarMenuAtivo);
-atualizarMenuAtivo();
+function liberarDeteccao() {
+  rolagemProgramada = false;
+}
+
+// Clique no menu
+linksMenu.forEach(link => {
+  link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+    if (!href || !href.startsWith('#')) return;
+
+    const idAlvo = href.substring(1);
+    const secaoAlvo = document.getElementById(idAlvo);
+    if (!secaoAlvo) return;
+
+    e.preventDefault();
+
+    rolagemProgramada = true; // trava a detecção automática
+    marcarLinkAtivo(idAlvo);
+
+    const posicaoAlvo = secaoAlvo.getBoundingClientRect().top + window.scrollY - getHeaderOffset();
+    window.scrollTo({ top: posicaoAlvo, behavior: 'smooth' });
+
+    history.pushState(null, '', href);
+
+    // Rede de segurança: caso o navegador não dispare 'scrollend'
+    // (Safari mais antigo), libera de qualquer jeito depois de um tempo generoso
+    clearTimeout(window._rolagemTimeout);
+    window._rolagemTimeout = setTimeout(liberarDeteccao, 1500);
+  });
+});
+
+// Evento nativo que dispara quando a rolagem (inclusive a suave) realmente termina
+window.addEventListener('scrollend', liberarDeteccao);
+
+// Detecção da seção visível via IntersectionObserver
+const observer = new IntersectionObserver((entries) => {
+  if (rolagemProgramada) return; // ignora atualizações durante o clique
+
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      marcarLinkAtivo(entry.target.id);
+    }
+  });
+}, {
+  root: null,
+  rootMargin: `-${getHeaderOffset()}px 0px -55% 0px`,
+  threshold: 0
+});
+
+secoes.forEach(secao => observer.observe(secao));
+
+// Garantia extra: fim absoluto da página força a última seção
+window.addEventListener('scroll', () => {
+  if (rolagemProgramada) return;
+
+  const chegouAoFim = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 2);
+  if (chegouAoFim) {
+    marcarLinkAtivo(secoes[secoes.length - 1].id);
+  }
+});
