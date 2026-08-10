@@ -1,0 +1,2549 @@
+/* O CSS é a linguagem que define a aparência visual e o layout de um site.
+
+ O reset zera e unifica os estilos padrões que cada navegador aplica por conta própria. Isso garante que o site tenha a mesma aparência e comportamento em qualquer dispositivo, evitando espaçamentos indesejados ou quebras.
+
+  /* ---------- Reset ---------- */
+
+html {
+  scroll-behavior: smooth;
+  /* Habilita a rolagem suave ao navegar entre âncoras na página */
+}
+
+section {
+  scroll-margin-top: 130px;
+  /* Define a margem de rolagem para as seções, garantindo que o conteúdo não fique escondido atrás do cabeçalho fixo ao navegar entre âncoras na página */
+}
+
+* {
+  /* Seleciona todos os elementos da página */
+  margin: 0;
+  /* Remove a margem padrão de todos os elementos */
+  padding: 0;
+  /* Remove o preenchimento padrão de todos os elementos */
+  box-sizing: border-box;
+  /* Define o modelo de caixa para incluir bordas e preenchimento no tamanho total do elemento */
+}
+
+body {
+  /* Define o estilo do corpo da página */
+
+  font-family: "Poppins", sans-serif;
+  /* Define a fonte padrão para o corpo da página */
+  background: #ffffff;
+  /* Define a cor de fundo do corpo da página */
+  color: #333333;
+  /* Define a cor do texto padrão do corpo da página */
+  overflow-x: hidden;
+  /* Impede a rolagem horizontal da página */
+}
+
+img {
+  /* Define o estilo para elementos de imagem */
+  display: block;
+  /* Define o comportamento de exibição da imagem como bloco, ocupando toda a largura disponível */
+  max-width: 100%;
+  /* Define a largura máxima da imagem do contêiner pai, garantindo que ela não ultrapasse o tamanho do contêiner */
+}
+
+a {
+  /* Define o estilo para elementos de link */
+  text-decoration: none;
+  /* Remove o sublinhado padrão dos links */
+}
+
+ul {
+  /* Define o estilo para elementos de lista não ordenada */
+  list-style: none;
+  /* Remove os marcadores padrão das listas não ordenadas */
+}
+
+.container {
+  /* Define o estilo para elementos com a classe "container" */
+  width: 90%;
+  /* Define a largura do contêiner como 90% da largura da página */
+  max-width: 1200px;
+  /* Define a largura máxima do contêiner como 1200 pixels */
+  margin: 0 auto;
+  /* Centraliza o contêiner horizontalmente na página */
+}
+
+/* ================
+      SEÇÃO MENU
+   ================ */
+
+header {
+  /* Define o estilo para o elemento de cabeçalho */
+  position: fixed;
+  /* Define a posição do cabeçalho como fixa, permanecendo visível mesmo ao rolar a página */
+  top: 0;
+  /* Define a posição do cabeçalho no topo da página */
+  left: 0;
+  /* Define a posição do cabeçalho à esquerda da página */
+  width: 100%;
+  /* Define a largura do cabeçalho como 100% da largura da página */
+  display: flex;
+  /* Define o layout do cabeçalho como flexível, permitindo o alinhamento dos elementos internos */
+  align-items: center;
+  /* Alinha verticalmente os elementos internos do cabeçalho ao centro */
+  padding: 18px 120px;
+  /* Espaçamento interno do cabeçalho (1º valor: topo e base; 2º valor: direita e esquerda*/
+  background: #FFFFFF;
+  /*Define a cor de fundo do cabeçalho como branco */
+  z-index: 1000;
+  /* Define a ordem de empilhamento do cabeçalho, garantindo que ele fique acima de outros elementos da página */
+}
+
+.logo {
+  margin-right: 30px;
+  /* Define a margem à direita do logotipo, criando um espaço entre o logotipo e os elementos adjacentes */
+}
+
+.logo img {
+  width: 200px;
+  height: auto;
+  /* mantém a proporção original da imagem */
+}
+
+nav ul {
+  /* Define o estilo para a lista dentro do elemento de navegação */
+  display: flex;
+  /* Define o layout da lista como flexível, permitindo o alinhamento dos itens da lista em linha */
+  gap: 30px;
+  /* Define o espaçamento entre os itens da lista, criando um espaço de 30 pixels entre cada item */
+  align-items: center;
+  /* Alinha verticalmente os itens da lista ao centro */
+}
+
+nav a {
+  /* Define o estilo para as seções dentro do elemento de navegação */
+  font-family: "Poppins", sans-serif;
+  /* Define a fonte das seções como "Poppins" */
+  color: #9b6c3e;
+  /* Define a cor do texto das seções */
+  font-size: 17px;
+  /* Define o tamanho da fonte das seções */
+  font-weight: 600;
+  /* Define a espessura da fonte das seções (semi-negrito) */
+  transition: .3s;
+  /* Define uma transição suave de 0,3 segundos para as propriedades que mudam nas seções */
+}
+
+nav a:hover {
+  /* Define o estilo para os links dentro do elemento de navegação quando o mouse passa sobre eles */
+  color: #f8c257;
+  /* Define a cor do texto dos links quando o mouse passa sobre eles */
+}
+
+nav a.ativo {
+  color: #f8c257;
+}
+
+/* ============
+       HOME
+   ============ */
+
+#home {
+  width: 100%;
+  /* Define a largura da seção "home" como 100% da largura da página */
+  margin: 0;
+  /* Remove a margem padrão da seção "home" */
+  padding: 0;
+  /* Remove o preenchimento padrão da seção "home" */
+}
+
+/* ---------- Slider ---------- */
+
+.slider {
+  /* Define o estilo para o elemento de slider */
+  position: relative;
+  /* Define a posição do slider como relativa, permitindo o posicionamento absoluto dos elementos internos */
+  width: 100%;
+  /* Define a largura do slider como 100% da largura da página */
+  height: 750px;
+  /* Define a altura do slider */
+  overflow: hidden;
+  /* Oculta qualquer conteúdo que ultrapasse os limites do slider */
+}
+
+.slide {
+  position: absolute;
+  /* Define a posição do slide como absoluta, permitindo o posicionamento em relação ao elemento pai (slider) */
+  top: 0;
+  /* Define a posição do slide no topo do elemento pai (slider) */
+  left: 0;
+  /* Define a posição do slide à esquerda do elemento pai (slider) */
+  width: 100%;
+  /* Define a largura do slide como 100% da largura do elemento pai (slider) */
+  height: 100%;
+  /* Define a altura do slide como 100% da altura do elemento pai (slider) */
+  opacity: 0;
+  /* Define a opacidade do slide como 0, tornando-o invisível */
+  visibility: hidden;
+  /* Define a visibilidade do slide como oculta, removendo-o do fluxo de renderização da página */
+  transition: opacity .8s ease;
+  /* Define uma transição suave de 8 segundos para a opacidade do slide */
+}
+
+.slide.active {
+  /* Define o estilo para o slide ativo */
+  opacity: 1;
+  /* Define a opacidade do slide ativo como 1, tornando-o totalmente visível */
+  visibility: visible;
+  /* Define a visibilidade do slide ativo como visível, tornando-o parte do fluxo de renderização da página */
+}
+
+.slide img {
+  /*Define o estilo para as imagens dentro do slide */
+  width: 100%;
+  /* Define a largura da imagem como 100% da largura do elemento pai (slide) */
+  height: 100%;
+  /* Define a altura da imagem como 100% da altura do elemento pai (slide) */
+  object-fit: cover;
+  /* Define o comportamento da imagem para cobrir completamente o elemento pai (slide), mantendo a proporção da imagem e cortando partes que ultrapassem os limites */
+}
+
+/* ---------- Configuração geral das caixa de texto ---------- */
+
+.overlay {
+  /* Define o estilo para as caixas de texto sobrepostas aos slides */
+  position: absolute;
+  /* Define a posição da caixa de texto como absoluta, permitindo o posicionamento em relação ao elemento pai (slide) */
+  left: 50%;
+  /* Define a posição da caixa de texto no centro horizontal do elemento pai (slide) */
+  transform: translateX(-50%) translateY(20px);
+  /* Centraliza a caixa de texto horizontalmente e aplica um deslocamento vertical de 20 pixels */
+  color: #FFFFFF;
+  /* Define a cor do texto da caixa de texto como branco */
+  border-radius: 10px;
+  /* Define o raio da borda da caixa de texto como 10 pixels, arredondando os cantos */
+  opacity: 0;
+  /* Define a opacidade da caixa de texto como 0, tornando-a invisível */
+  transition: opacity .6s ease, transform .6s ease;
+  /* Define uma transição suave de 0,6 segundos para a opacidade e o deslocamento da caixa de texto */
+}
+
+.overlay h1,
+/* Define o estilo para os títulos (h1) dentro das caixas de texto sobrepostas aos slides */
+.overlay h2 {
+  /* Define o estilo para os subtítulos (h2) dentro das caixas de texto sobrepostas aos slides */
+  font-family: "Poppins", sans-serif;
+  /* Define a fonte dos títulos e subtítulos como "Poppins" */
+  margin: 0;
+  /* Remove a margem padrão dos títulos e subtítulos */
+  line-height: 1.4;
+  /* Define a altura da linha do subtítulo como 1,4 vezes o tamanho da fonte */
+  font-weight: bold;
+  /* Define a espessura da fonte dos títulos e subtítulos como negrito */
+}
+
+/* ---------- Slide 1 ---------- */
+
+.overlay1 {
+  bottom: 95px;
+  /* Define a distância da parte inferior do slide para a caixa de texto como 95 pixels */
+  background: rgba(0, 0, 0, .25);
+  /*
+    display: inline-block; /* Define o comportamento de exibição da caixa de texto como inline-block, permitindo que ela se ajuste ao conteúdo interno */
+  white-space: nowrap;
+  /* Impede que o texto da caixa de texto quebre em várias linhas, mantendo-o em uma única linha */
+  position: absolute;
+  /* Define a posição da caixa de texto como absoluta, permitindo o posicionamento em relação ao elemento pai (slide) */
+  left: 50%;
+  /* Define a posição da caixa de texto no centro horizontal do elemento pai (slide) */
+  color: #FFFFFF;
+  /* Define a cor do texto da caixa de texto como branco */
+  border-radius: 10px;
+  /* Define o raio da borda da caixa de texto como 10 pixels, arredondando os cantos */
+  text-align: center;
+  /* Define o alinhamento do texto da caixa de texto como centralizado */
+  padding: 18px 14px;
+  /* Define o preenchimento interno da caixa de texto (valor 1: topo e base; valor 2: direita e esquerda) */
+  opacity: 0;
+  /* Define a opacidade da caixa de texto como 0, tornando-a invisível */
+
+}
+
+.overlay1 h1 {
+  font-size: 38px;
+  color: #FFFFFF;
+}
+
+/* ---------- Slide 2 ---------- */
+
+.overlay2 {
+  /* Define o estilo para a caixa de texto do slide 2 */
+  bottom: 130px;
+  /* Quanto maior o valor, mais para cima a caixa fica. Quanto menor o valor, mais para baixo a caixa fica */
+  width: 90%;
+  /* Define a largura da caixa de texto como 90% da largura do slide */
+  max-width: 1200px;
+  /* Define a largura máxima da caixa de texto como 1200px */
+  background: rgba(0, 0, 0, .35);
+  /* Define a cor de fundo da caixa de texto como preto com 35% de opacidade */
+  padding: 14px 14px;
+  /* Define o preenchimento interno da caixa de texto (valor 1: topo e base; valor 2: direita e esquerda) */
+  text-align: center;
+  /* Define o alinhamento do texto da caixa de texto como centralizado */
+}
+
+.overlay2 h2 {
+  /* Define o estilo para o subtítulo (h2) dentro da caixa de texto do slide 2 */
+  font-size: 32px;
+  /* Define o tamanho da fonte do subtítulo como 32 pixels */
+  line-height: 1.4;
+  /* Define a altura da linha do subtítulo como 1,4 vezes o tamanho da fonte */
+}
+
+/* ---------- Slide 3 ---------- */
+
+.overlay3 {
+  bottom: 80px;
+  width: 90%;
+  max-width: 1200px;
+  background: rgba(0, 0, 0, .35);
+  padding: 12px 40px;
+  text-align: center;
+  left: 50%;
+}
+
+.overlay3 h2 {
+  font-size: 32px;
+  line-height: 1.4;
+}
+
+/* ---------- Slide 4 ---------- */
+
+.overlay4 {
+  bottom: 80px;
+  width: 90%;
+  max-width: 1200px;
+  background: rgba(0, 0, 0, .35);
+  padding: 16px 25px;
+  text-align: center;
+  left: 50%;
+}
+
+.overlay4 h2 {
+  font-size: 32px;
+  line-height: 1.4;
+}
+
+/* ---------- Animação das frases ---------- */
+
+.overlay.show {
+  /* Define o estilo para a caixa de texto quando a classe "show" é adicionada */
+  opacity: 1;
+  /*  Define a opacidade da caixa de texto como 1, tornando-a totalmente visível */
+  transform: translateX(-50%) translateY(0);
+  /* Centraliza a caixa de texto horizontalmente e remove o deslocamento vertical */
+}
+
+.slide.active .overlay {
+  /* Define o estilo para a caixa de texto quando o slide está ativo */
+  opacity: 1;
+  /* Define a opacidade da caixa de texto como 1, tornando-a totalmente visível */
+  transform: translateX(-50%) translateY(0);
+  /* Centraliza a caixa de texto horizontalmente e remove o deslocamento vertical */
+}
+
+/* ====================
+     SEÇÃO SOBRE NÓS
+   ==================== */
+
+#sobre {
+  padding: 30px 0 100px 0;
+  /* Define o espaçamento interno da seção "sobre" (valor 1: topo; valor 2: direita; valor 3: base; valor 4: esquerda) */
+  background: #eee;
+  /* Define a cor de fundo da seção "sobre" como cinza claro */
+}
+
+.container {
+  width: 90%;
+  /* Define a largura do contêiner como 90% da largura da página */
+  max-width: 1200px;
+  /* Define a largura máxima do contêiner como 1200 pixels */
+  margin: 0 auto;
+  /* Centraliza o contêiner horizontalmente */
+}
+
+.emblema {
+  display: block;
+  /* Define o comportamento de exibição do emblema como bloco, ocupando toda a largura disponível */
+  width: 250px;
+  /* Define a largura do emblema como 250 pixels */
+  max-width: 40%;
+  /* Evita que ela fique enorme/cortada em telas estreitas */
+  height: auto;
+  /* Preserva a proporção original da imagem */
+  margin: 3px auto 20px;
+  /* Centraliza o emblema horizontalmente e adiciona uma margem superior de 3 pixels e uma margem inferior de 20 pixels */
+  margin-bottom: 0px;
+  /* Ajusta a margem inferior do emblema */
+
+}
+
+.titulo-secao {
+  text-align: center;
+  /* Centraliza o título da seção horizontalmente */
+  font-size: 18px;
+  /* Define o tamanho da fonte do título da seção como 18 pixels */
+  color: #9b6c3e;
+  /* Define a cor do texto do título da seção como marrom */
+  margin-bottom: 30px;
+  /* Adiciona uma margem inferior de 30 pixels */
+}
+
+/* ---------- Conteúdo ---------- */
+
+.sobre-conteudo {
+  display: flex;
+  /* Define o layout do conteúdo como flexível, permitindo o alinhamento dos elementos internos */
+  justify-content: space-between;
+  /* Distribui o espaço restante entre os elementos internos, criando um espaçamento igual entre eles */
+  align-items: center;
+  /* Alinha verticalmente os elementos internos ao centro */
+  gap: 40px;
+  /* Define o espaçamento entre os elementos internos como 40 pixels */
+}
+
+/* ---------- Texto ---------- */
+
+.sobre-texto {
+  flex: 1;
+  /* Permite que o elemento de texto ocupe o espaço disponível dentro do contêiner flexível */
+}
+
+.sobre-texto p {
+  font-size: 15px;
+  line-height: 1.5;
+  /* Define a altura da linha do parágrafo como 1,5 vezes o tamanho da fonte */
+  color: #9b6c3e;
+  text-align: justify;
+  margin-top: 20px;
+  margin-bottom: -10px;
+  /* espaço entre os parágrafos */
+}
+
+/* ---------- Imagem ---------- */
+
+.sobre-imagem {
+  width: 654px;
+  /* Define a largura da imagem */
+  flex-shrink: 0;
+  /* Impede que a imagem encolha quando o espaço disponível for menor que a largura definida */
+  margin-top: 50px;
+}
+
+.sobre-imagem img {
+  width: 100%;
+  height: 522px;
+  object-fit: cover;
+}
+
+.objetivos {
+  margin-top: 20px;
+  /* Adiciona uma margem superior à lista de objetivos */
+}
+
+.objetivos li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  /* Define o espaçamento entre o ícone e o texto do item da lista*/
+  margin-bottom: 8px;
+  /* espaço entre os itens da lista */
+  margin-top: -1px;
+  color: #9b6c3e;
+  font-size: 15px;
+  line-height: 1.2;
+  /* Define a altura da linha dos itens da lista como 1,2 vezes o tamanho da fonte */
+  text-align: justify;
+}
+
+.objetivos li img {
+  width: 20px;
+  /* Define a largura do ícone*/
+  height: 20px;
+  /* Define a altura do ícone */
+  flex-shrink: 0;
+  margin-top: -1px;
+}
+
+/* =================
+     SEÇÃO SETORES
+   ================= */
+
+#setores {
+  background: #6E4E2E;
+  padding: 90px 0;
+}
+
+.setores-container {
+  text-align: center;
+}
+
+.titulo-setores {
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+
+.linha-setores {
+  display: block;
+  width: 150px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #E8B94A, transparent);
+  margin: 0 auto 26px;
+}
+
+.frase-setores {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-bottom: 50px;
+}
+
+
+.setor-nome .setor-titulo,
+.setor-nome .setor-subtitulo {
+  display: block;
+}
+
+.setor-nome .setor-subtitulo {
+  font-size: 0.85em;
+  font-weight: normal;
+}
+
+.grid-setores {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.setor-item {
+  position: relative;
+  /* necessário para posicionar o nome */
+}
+
+.setor-imagem-wrap {
+  position: relative;
+  overflow: hidden;
+  /* corta o zoom da imagem para não vazar da borda */
+  border: 4px solid transparent;
+  /* borda transparente por padrão, some sem "pular" no hover */
+  transition: border-color .3s ease;
+}
+
+.setor-item img {
+  width: 100%;
+  aspect-ratio: 263 / 468;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s ease;
+  /* suaviza o zoom */
+}
+
+/* Gradiente escuro na base, para o nome ficar legível sobre qualquer foto */
+.setor-imagem-wrap::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, .35), transparent);
+  pointer-events: none;
+  /* deixa cliques passarem direto para a imagem */
+}
+
+.setor-nome {
+  position: absolute;
+  inset: 0;
+  /* estica o elemento para cobrir 100% do wrap (topo, base, esquerda, direita) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* centraliza verticalmente */
+  justify-content: center;
+  /* centraliza horizontalmente */
+  text-align: center;
+  padding: 0 14px;
+  /* respiro nas laterais, evita o texto colar na borda */
+  color: #FFFFFF;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  /* negrito */
+  font-size: 24px;
+  line-height: 1.3;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, .30);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Cursor de "clicável" nas imagens */
+.setor-item {
+  cursor: pointer;
+}
+
+/* ---------- Modal ---------- */
+
+.modal-setor {
+  display: none;
+  /* escondido por padrão */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .75);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-setor.ativo {
+  display: flex;
+  /* exibido quando a classe "ativo" é adicionada via JS */
+}
+
+.modal-setor-conteudo {
+  background: #FFFFFF;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  padding: 40px 35px;
+  position: relative;
+  text-align: center;
+}
+
+.modal-fechar {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  color: #9b6c3e;
+  cursor: pointer;
+}
+
+.modal-setor-titulo {
+  font-family: "Poppins", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #6E4E2E;
+  margin-bottom: 16px;
+}
+
+.modal-setor-texto {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333333;
+  text-align: justify;
+  hyphens: auto;
+
+}
+
+/* ---------- Efeitos de Hover ---------- */
+
+.setor-item:hover .setor-imagem-wrap {
+  border-color: #f5bf53;
+  /* borda dourada, mesma cor da linha do título */
+  border-width: 3px;
+}
+
+.setor-item:hover img {
+  transform: scale(1.15);
+  /* leve zoom na imagem */
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .grid-setores {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo-setores {
+    font-size: 30px;
+  }
+
+  .setor-item img {
+    height: 200px;
+  }
+}
+
+/* =================
+     SEÇÃO EQUIPE
+   ================= */
+
+:root {
+  --eq-verde-fundo: #86a65a;
+  --eq-verde-escuro: #5f7d3d;
+  --eq-amarelo: #e8c547;
+  --eq-branco: #ffffff;
+  --eq-texto-suave: rgb(255, 255, 255);
+  --eq-sombra: rgba(0, 0, 0, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.equipe-page {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.equipe-page {
+  /* seção inteira */
+  background: var(--eq-verde-fundo);
+  padding: 64px 24px 80px;
+  /* topo, laterais, base */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.equipe-page h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  /* negrito */
+  color: var(--eq-branco);
+  font-size: 40px;
+  margin: 0 0 20px;
+  letter-spacing: 0.3px;
+}
+
+.divisor {
+  display: block;
+  width: 250px;
+  /* largura da linha */
+  height: 1.5px;
+  /* altura da linha */
+  background: linear-gradient(to right, transparent, var(--eq-amarelo), transparent);
+  margin: 0 auto 26px;
+}
+
+.equipe-page .subtitulo {
+  color: var(--eq-branco);
+  font-weight: 300;
+  font-size: 18px;
+  max-width: 1000px;
+  margin: 0 auto 56px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* ---------- Carrossel ---------- */
+
+.carrossel-wrap {
+  position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.seta {
+  position: absolute;
+  top: 100px;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.18);
+  /* fundo semi-transparente */
+  border: none;
+  color: var(--eq-branco);
+  width: 48px;
+  /* tamanho do botão */
+  height: 48px;
+  /*tamanho do botão */
+  min-width: 48px;
+  border-radius: 50%;
+  /* deixa circular */
+  font-size: 32px;
+  /* tamanho do ícone */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s ease, transform .15s ease;
+  z-index: 10;
+  /* acima dos membros do carrossel */
+}
+
+.seta-prev {
+  left: 10px;
+}
+
+.seta-next {
+  right: 10px;
+}
+
+.seta:hover {
+  background: rgba(255, 255, 255, 0.32);
+  /* escurece o fundo ao passar o mouse */
+  transform: translateY(-50%) scale(1.06);
+  /* mantém centralizado mesmo ao crescer no hover */
+}
+
+.seta:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+/* efeito de clique, diminui o botão */
+.seta:focus-visible {
+  outline: 3px solid var(--eq-amarelo);
+  outline-offset: 2px;
+}
+
+/* acessibilidade: mostra contorno quando o botão é focado via teclado */
+
+.carrossel-viewport {
+  width: 100%;
+  overflow-x: hidden;
+  /* esconde os membros fora da tela, horizontalmente */
+  overflow-y: visible;
+  /* NÃO corta verticalmente — deixa elipses "maiores" respirarem */
+  position: relative;
+  height: 320px;
+  /* um pouco mais alto, pra dar folga vertical */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px 60px 0;
+  /* respiro nas laterais — evita cortar quem está na borda */
+  box-sizing: border-box;
+}
+
+.carrossel-track {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.membro {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform .5s cubic-bezier(.22, .61, .36, 1),
+    filter .5s ease,
+    opacity .5s ease;
+  cursor: pointer;
+}
+
+.membro .foto-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid var(--eq-branco);
+  overflow: hidden;
+  /* corta a foto para caber no círculo */
+  box-shadow: 0 8px 20px var(--eq-sombra);
+  transition: transform .5s ease;
+  /* suaviza o zoom da foto ao passar o mouse */
+}
+
+.membro img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.membro .nome {
+  color: var(--eq-branco);
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  margin-top: 14px;
+  line-height: 1.25;
+}
+
+.membro .cargo {
+  color: var(--eq-branco);
+  font-weight: 600;
+  font-size: 13px;
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
+.membro:not(.ativo):hover .foto-container {
+  transform: scale(1.04);
+}
+
+/* estado central (foco) */
+.membro.ativo {
+  opacity: 1;
+  filter: brightness(1);
+}
+
+.membro.ativo .foto-container {
+  width: 200px;
+  height: 200px;
+}
+
+.membro.ativo .foto-container {
+  border-color: var(--eq-amarelo);
+}
+
+/* vizinhos próximos */
+.membro.prox-1 {
+  opacity: 1;
+  filter: none;
+}
+
+.membro.prox-1 .foto-container {
+  width: 200px;
+  height: 200px;
+}
+
+.membro.prox-1 .nome,
+.membro.prox-1 .cargo {
+  font-size: 13px;
+}
+
+/* mais distantes */
+.membro.prox-2 {
+  opacity: 1;
+  filter: none;
+}
+
+.membro.prox-2 .foto-container {
+  width: 200px;
+  height: 200px;
+}
+
+.membro.prox-2 .nome,
+.membro.prox-2 .cargo {
+  font-size: 13px;
+}
+
+.membro.oculto {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* indicadores */
+.indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 36px;
+}
+
+.indicadores button {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  padding: 0;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.indicadores button.ativo {
+  background: var(--eq-amarelo);
+  transform: scale(1.25);
+}
+
+/* ---------- Modal ---------- */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 30, 10, 0.55);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  padding-top: 180px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  z-index: 100;
+}
+
+.modal-overlay.aberto {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-card {
+  background: var(--eq-branco);
+  border-radius: 18px;
+  max-width: 420px;
+  width: 100%;
+  padding: 36px 28px 30px;
+  text-align: center;
+  position: relative;
+  transform: translateY(16px) scale(0.97);
+  transition: transform .25s ease;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.modal-overlay.aberto .modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.modal-fechar {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--eq-verde-escuro);
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.modal-fechar:hover {
+  background: #f0f0f0;
+}
+
+.modal-card .foto-modal {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid var(--eq-verde-fundo);
+  overflow: hidden;
+  margin: 0 auto 18px;
+}
+
+.modal-card .foto-modal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-card h2 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--eq-verde-escuro);
+  font-size: 22px;
+  margin: 0 0 4px;
+}
+
+.modal-card .modal-cargo {
+  color: #6b7a5a;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.modal-card .modal-bio {
+  color: #444;
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin-bottom: 22px;
+  text-align: left;
+}
+
+.modal-card .modal-bio p {
+  margin-bottom: 12px;
+}
+
+.modal-card .modal-bio p:last-child {
+  margin-bottom: 0;
+}
+
+
+.modal-card .lattes-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--eq-verde-fundo);
+  color: var(--eq-branco);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 22px;
+  border-radius: 30px;
+  transition: background .2s ease, transform .15s ease;
+}
+
+.modal-card .lattes-link:hover {
+  background: var(--eq-verde-escuro);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .carrossel-viewport {
+    height: 250px;
+  }
+
+  .membro {
+    width: 140px;
+  }
+
+  .seta {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .membro,
+  .modal-card,
+  .modal-overlay {
+    transition: none !important;
+  }
+}
+
+/*===================
+        AÇÕES
+  ===================*/
+
+.eventos-wrap {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+}
+
+/* ---------- Colmeia ---------- */
+
+.ev-hex {
+  position: absolute;
+  /* para posicionar cada hexágono individualmente */
+  width: 130px;
+  /* largura do hexágono */
+  height: 125px;
+  /* altura do hexágono */
+  transform: translate(-50%, -50%);
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+  background: linear-gradient(155deg, var(--ev-brown-deep), var(--ev-gold));
+  padding: 5px;
+  /* para não cortar a borda do gradiente */
+}
+
+/* linha 1 - topo (1 hexágono, coluna central) */
+.h1 {
+  left: 358px;
+  top: 15px;
+}
+
+/* linha 2 - colunas intercaladas (2 hexágonos) */
+.h2 {
+  left: 260.5px;
+  top: 77.5px;
+}
+
+.h3 {
+  left: 455.5px;
+  top: 77.5px;
+}
+
+/* linha 3 - colunas principais (3 hexágonos) */
+.h4 {
+  left: 163px;
+  top: 140px;
+}
+
+.h5 {
+  left: 358px;
+  top: 140px;
+}
+
+.h6 {
+  left: 553px;
+  top: 140px;
+}
+
+/* linha 4 - colunas intercaladas (2 hexágonos) */
+.h7 {
+  left: 260.5px;
+  top: 202.5px;
+}
+
+.h8 {
+  left: 455.5px;
+  top: 202.5px;
+}
+
+/* linha 5 - base (2 hexágonos, colunas principais) */
+.h9 {
+  left: 163px;
+  top: 265px;
+}
+
+.h10 {
+  left: 358px;
+  top: 265px;
+}
+
+/* ---------- Cores da página ---------- */
+:root {
+  --bg: #FFDD55;
+  --bg-soft: #FFE477;
+  --brown-deep: #6E3A0C;
+  --brown: #86420A;
+  --brown-mid: #A2591C;
+  --gold: #C1902C;
+  --cream: #FFF6DE;
+  --line: rgba(110, 58, 12, 0.18);
+  /* linha de separação */
+  --shadow: 0 10px 24px rgba(110, 58, 12, 0.18);
+  /* sombra suave */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Reset de box-sizing para todos os elementos */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Suaviza a rolagem da página */
+
+body {
+  margin: 0;
+  background: var(--bg);
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.25), transparent 40%),
+    radial-gradient(circle at 90% 85%, rgba(255, 255, 255, 0.18), transparent 45%);
+  color: var(--brown-deep);
+  font-family: 'Nunito Sans', sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 56px 40px 80px;
+}
+
+/* ---------- Cabeçalho/Navegação ---------- */
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 26px 40px 0;
+}
+
+.brand {
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: var(--brown-deep);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: var(--brown);
+  display: inline-block;
+  transform: rotate(45deg);
+}
+
+.back-link {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--brown);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 2px solid var(--brown);
+  transition: transform .18s ease, background .18s ease, color .18s ease;
+}
+
+.back-link:hover {
+  background: var(--brown);
+  color: var(--cream);
+  transform: translateX(-3px);
+}
+
+/* ---------- Título ---------- */
+
+h1.page-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 2.6rem;
+  color: var(--brown-deep);
+  margin: 0 0 40px;
+  letter-spacing: 0.01em;
+}
+
+p.page-sub {
+  color: var(--brown-mid);
+  font-size: 1.05rem;
+  max-width: 560px;
+  /* largura máxima do parágrafo */
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---------- Layout da seção ---------- */
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-top: 56px;
+}
+
+.categories-block .cat-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--brown-deep);
+  margin-bottom: 34px;
+}
+
+.categories-block .cat-heading .sq {
+  width: 20px;
+  height: 20px;
+  background: var(--brown);
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.cat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cat-list li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 4px;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--brown);
+  border-bottom: 1px solid var(--line);
+  transition: color .18s ease, padding-left .18s ease, gap .18s ease;
+}
+
+.cat-list li:first-child a {
+  padding-top: 4px;
+}
+
+.cat-list li a .arrow {
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity .18s ease, transform .18s ease;
+  font-size: 1.1rem;
+}
+
+.cat-list li a:hover {
+  color: var(--brown-deep);
+  padding-left: 12px;
+}
+
+.cat-list li a:hover .arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ev-hive-stage {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 530 / 400;
+  margin: 0 auto;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .ev-hex-inner {
+    animation: none !important;
+  }
+}
+
+/* ---------- Category pages ---------- */
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 44px;
+}
+
+.event-card {
+  background: var(--cream);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(110, 58, 12, 0.24);
+}
+
+.event-card .thumb {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--brown-mid), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 16px;
+}
+
+.event-card .body {
+  padding: 20px 22px 24px;
+}
+
+.event-card .tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brown-deep);
+  background: rgba(134, 66, 10, 0.12);
+  padding: 5px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.event-card h3 {
+  font-family: 'Baloo 2', sans-serif;
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  color: var(--brown-deep);
+}
+
+.event-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--brown-mid);
+}
+
+.note-box {
+  margin-top: 52px;
+  padding: 20px 24px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px dashed var(--brown-mid);
+  color: var(--brown-deep);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 880px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .site-nav {
+    padding: 22px 24px 0;
+  }
+
+  .wrap {
+    padding: 36px 24px 60px;
+  }
+
+  h1.page-title {
+    font-size: 2.1rem;
+  }
+
+  .event-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .event-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -------- Seção Eventos -------- */
+
+#eventos {
+  --ev-brown-deep: #6E3A0C;
+  /* cor do título */
+  --ev-brown: #86420A;
+  /* cor do texto */
+  --ev-brown-mid: #A2591C;
+  /* cor do subtítulo */
+  --ev-gold: #C1902C;
+  /* cor do gradiente */
+  --ev-cream: #FFF6DE;
+  --ev-line: rgba(110, 58, 12, 0.18);
+  /* linha fina */
+  --ev-shadow: 0 10px 24px rgba(110, 58, 12, 0.18);
+  /* sombra suave */
+  --ev-bg: #F5D86A;
+  /* cor de fundo da seção (antes era uma variável inexistente) */
+
+  background: var(--ev-bg);
+  /* cor de fundo */
+  padding: 56px 0 80px;
+  /* topo, base */
+}
+
+.eventos-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.ev-sub {
+  color: var(--ev-brown-mid);
+  /* cor do subtítulo */
+  font-size: 1.05rem;
+  max-width: 560px;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.ev-hero-grid {
+  display: grid;
+  /* define o layout da grid */
+  grid-template-columns: 340px 1fr;
+  /* coluna fixa + coluna flexível */
+  gap: 40px;
+  /* espaçamento entre as colunas */
+  align-items: start;
+  /* alinha o conteúdo no topo */
+  margin-top: 56px;
+  /* espaçamento acima da grid */
+}
+
+.ev-cat-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: var(--ev-brown-deep);
+  margin-bottom: 34px;
+}
+
+.ev-cat-heading .sq {
+  width: 20px;
+  height: 20px;
+  background: var(--ev-brown);
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.ev-cat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ev-cat-list li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 4px;
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: #000000;
+  text-decoration: none;
+  border-bottom: 1px solid var(--ev-line);
+  transition: color .18s ease, padding-left .18s ease;
+}
+
+.ev-cat-list li a .arrow {
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+.ev-cat-list li a:hover {
+  color: #855627;
+  padding-left: 12px;
+}
+
+.ev-cat-list li a:hover .arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ev-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: var(--ev-brown);
+  text-decoration: none;
+  margin-bottom: 16px;
+}
+
+.ev-back:hover {
+  color: var(--ev-brown-deep);
+}
+
+.ev-hex-inner {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+  background-size: cover;
+  background-position: center;
+  transform-origin: center;
+  animation: evHexZoom 5s ease-in-out infinite;
+}
+
+@keyframes evHexZoom {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.22);
+  }
+}
+
+.ev-hex:hover .ev-hex-inner {
+  animation-play-state: paused;
+  transform: scale(1.22);
+}
+
+.ev-hex[data-i="0"] .ev-hex-inner {
+  animation-duration: 12.5s;
+  animation-delay: 0s;
+}
+
+.ev-hex[data-i="1"] .ev-hex-inner {
+  animation-duration: 10.5s;
+  animation-delay: 2.6s;
+}
+
+.ev-hex[data-i="2"] .ev-hex-inner {
+  animation-duration: 13.5s;
+  animation-delay: 5.1s;
+}
+
+.ev-hex[data-i="3"] .ev-hex-inner {
+  animation-duration: 11s;
+  animation-delay: 1.3s;
+}
+
+.ev-hex[data-i="4"] .ev-hex-inner {
+  animation-duration: 12s;
+  animation-delay: 4.4s;
+}
+
+.ev-hex[data-i="5"] .ev-hex-inner {
+  animation-duration: 10s;
+  animation-delay: 7.2s;
+}
+
+.ev-hex[data-i="6"] .ev-hex-inner {
+  animation-duration: 13s;
+  animation-delay: 3.1s;
+}
+
+.ev-hex[data-i="7"] .ev-hex-inner {
+  animation-duration: 11.5s;
+  animation-delay: 6.4s;
+}
+
+.ev-hex[data-i="8"] .ev-hex-inner {
+  animation-duration: 12.8s;
+  animation-delay: 0.7s;
+}
+
+.ev-hex[data-i="9"] .ev-hex-inner {
+  animation-duration: 10.8s;
+  animation-delay: 8.5s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ev-hex-inner {
+    animation: none !important;
+  }
+}
+
+/* ---- Cards de evento ---- */
+
+.ev-event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 20px;
+}
+
+.ev-event-card {
+  background: var(--ev-cream);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--ev-shadow);
+  border: 1px solid var(--ev-line);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.ev-event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(110, 58, 12, 0.24);
+}
+
+.ev-thumb {
+  /* miniatura do evento */
+
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 4/3;
+  /* mantém proporção da imagem */
+  background: #ffffff;
+  /* cor de fundo caso a imagem demore a carregar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* centraliza o texto */
+  color: var(--ev-cream);
+  /* cor do texto */
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 16px;
+  /* espaçamento interno */
+}
+
+.ev-thumb img {
+  max-width: 180%;
+  max-height: 180%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.ev-body {
+  padding: 20px 22px 24px;
+}
+
+.ev-tag {
+  /* tag do evento */
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ev-brown-deep);
+  background: rgba(122, 70, 30, 0.50);
+  padding: 5px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.ev-btn-wrap {
+  text-align: center;
+}
+
+.ev-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 18px;
+  background-color: #a86c1f;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.ev-btn:hover {
+  background-color: #8a5717;
+  color: #fff;
+
+}
+
+.ev-body h3 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  color: var(--ev-brown-deep);
+}
+
+.ev-body p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #a76a2e;
+}
+
+@media (max-width: 880px) {
+  .ev-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .page-title {
+    font-size: 2.1rem;
+  }
+
+  .ev-event-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .ev-event-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*=======================
+      SEÇÃO PARCEIROS
+  =======================*/
+
+#parceiros {
+  position: relative;
+  padding: 90px 0 220px 0;
+  overflow: hidden;
+  /* esconde os logos que saem da tela */
+  color: #fff;
+  /* cor do texto */
+  background: #517928;
+  /* cor de fundo */
+}
+
+.par-bg {
+  position: absolute;
+  /* fundo da seção */
+  inset: 0;
+  /* ocupa toda a área da seção */
+  z-index: 0;
+  /* fica atrás do conteúdo */
+}
+
+.par-bg img {
+  width: 100%;
+  /* faz a foto preencher toda a seção, mantendo proporção */
+  height: 100%;
+  /* faz a foto preencher toda a seção, mantendo proporção */
+  object-fit: cover;
+  /* faz a foto preencher toda a seção, mantendo proporção */
+  object-position: 80% 85%;
+  /* ajuste se precisar mostrar mais de cima/baixo da foto */
+  display: block;
+  /* remove o espaço em branco abaixo da imagem */
+}
+
+.par-overlay {
+  position: absolute;
+  /* overlay da seção */
+  inset: 0;
+  /* ocupa toda a área da seção */
+  background: rgba(81, 121, 40, 0.35);
+  /* overlay semi-transparente */
+  z-index: 1;
+  /* fica entre o fundo e o conteúdo */
+}
+
+.par-content {
+  /* conteúdo centralizado */
+  position: relative;
+  /* para ficar acima do fundo e overlay */
+  z-index: 2;
+  /* fica acima do fundo e overlay */
+  max-width: 1180px;
+  /* largura máxima do conteúdo */
+  margin: 0 auto;
+  /* centraliza horizontalmente */
+  padding: 0 40px;
+  /* espaçamento lateral */
+  text-align: center;
+  /* centraliza o texto */
+}
+
+.par-titulo {
+  /* título da seção */
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  /* negrito */
+  color: #fff;
+  /* cor do texto */
+  font-size: 2.2rem;
+  /* tamanho do título */
+  background: rgba(13, 13, 13, 0.1);
+  /* fundo semi-transparente */
+  display: inline-block;
+  /* faz o fundo se ajustar ao tamanho do texto */
+  padding: 14px 36px;
+  /* topo/baixo, laterais */
+  border-radius: 10px;
+  /* cantos arredondados */
+  margin-bottom: 56px;
+  /* espaçamento abaixo do título */
+}
+
+.par-carrossel {
+  overflow: hidden;
+  /* esconde os logos que saem da tela */
+  width: 100%;
+  /* ocupa toda a largura da tela */
+  /* fade nas bordas, pra suavizar a entrada/saída dos logos */
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 80px, #000 calc(100% - 80px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 80px, #000 calc(100% - 80px), transparent 100%);
+}
+
+.par-trilha {
+  /* trilha de logos que se move */
+  display: flex;
+  /* usa flexbox pra alinhar os logos em linha */
+  align-items: center;
+  /* alinha verticalmente os logos */
+  gap: 30px;
+  /* espaçamento entre os logos */
+  width: max-content;
+  /* largura do conteúdo, pra não quebrar a linha */
+  animation: par-scroll 28s linear infinite;
+  /* animação de rolagem contínua */
+}
+
+.par-carrossel:hover .par-trilha {
+  animation-play-state: paused;
+  /* pausa ao passar o mouse, pra dar tempo de ler os nomes */
+}
+
+@keyframes par-scroll {
+  from {
+    transform: translateX(0);
+    /* começa na posição inicial */
+  }
+
+  to {
+    transform: translateX(-50%);
+    /* move a trilha para a esquerda, metade do seu tamanho, pra repetir o loop */
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .par-trilha {
+    animation: none;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .par-logo {
+    width: 110px;
+    height: 110px;
+    padding: 14px;
+  }
+
+  .par-trilha {
+    gap: 28px;
+  }
+}
+
+@media (max-width: 560px) {
+  .par-logo {
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+  }
+
+  .par-titulo {
+    font-size: 1.3rem;
+    padding: 10px 20px;
+  }
+}
+
+.par-logo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .25);
+  padding: 15px;
+  flex-shrink: 0;
+}
+
+.par-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .par-logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .par-logos-linha {
+    gap: 24px;
+  }
+
+  .par-titulo {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .par-logo {
+    width: 96px;
+    height: 96px;
+    padding: 14px;
+  }
+
+  .par-titulo {
+    font-size: 1.3rem;
+    padding: 10px 20px;
+  }
+}
+
+/* ==============================
+       SEÇÃO APOIE O PROJETO
+   ============================== */
+
+:root {
+  --ap-verde-escuro: #517928;
+  --ap-verde-folha: #6b9e3f;
+  --ap-marrom: #8a5a2b;
+  --ap-amarelo: #ffd966;
+  --ap-creme: #eeeeee;
+  --ap-texto: #3a352c;
+  --ap-texto-suave: #6b6357;
+  --ap-branco: #ffffff;
+  --ap-sombra: 0 10px 24px rgba(0, 0, 0, .10);
+  --ap-radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#apoie {
+  font-family: "Poppins", sans-serif;
+  color: var(--ap-texto);
+  background: var(--ap-creme);
+  padding: 70px 0;
+}
+
+.apoie-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ---------- Título e texto introdutório ---------- */
+
+.apoie-titulo {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 2.4rem;
+  /* tamanho do título */
+  color: #000000;
+  /* cor do título */
+  margin-bottom: 32px;
+  /* espaçamento abaixo do título */
+  text-align: center;
+}
+
+.apoie-intro p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  /* altura da linha do parágrafo */
+  color: var(--ap-texto-suave);
+  margin-bottom: 18px;
+  max-width: 1020px;
+  /* largura máxima do parágrafo */
+  text-align: Justify;
+}
+
+.apoie-intro strong {
+  color: var(--ap-texto-suave);
+  /* cor do texto em negrito */
+}
+
+/* ---------- Lista "formas de ajudar" ---------- */
+
+.logo-lojinha {
+  display: block;
+  width: 220px;
+  /* largura da logo */
+  height: auto;
+  margin: 0 auto 20px;
+  /* centraliza a logo e adiciona espaçamento abaixo */
+  margin-top: 10px;
+  /* espaçamento acima da logo */
+}
+
+.apoie-formas {
+  list-style: none;
+  /* remove os marcadores da lista */
+  padding: 0;
+  /* remove o padding padrão da lista */
+  margin: 14px 0 40px;
+  /* espaçamento acima e abaixo da lista */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* espaçamento entre os itens da lista */
+  text-align: Justify;
+  margin-bottom: 20px;
+}
+
+.apoie-icone {
+  width: 35px;
+  /* largura do ícone */
+  height: 35px;
+  /* altura do ícone */
+  background-repeat: no-repeat;
+  /* não repete a imagem de fundo */
+  background-position: center;
+  /* centraliza a imagem de fundo */
+  background-size: contain;
+  /* ajusta a imagem de fundo para caber dentro do elemento */
+}
+
+.apoie-formas li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  /* espaçamento entre o ícone e o texto */
+}
+
+.apoie-formas p {
+  margin: 0;
+  /* remove a margem padrão do parágrafo */
+  line-height: 1.6;
+  /* altura da linha do parágrafo */
+  color: var(--ap-texto-suave);
+  padding: top -10px
+    /* espaçamento entre o ícone e o texto */
+}
+
+/* ---------- Caixa da chave PIX ---------- */
+
+.apoie-pix {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  /* espaçamento entre os elementos da caixa */
+  background: var(--ap-branco);
+  border: 2px dashed var(--ap-verde-folha);
+  border-radius: var(--ap-radius);
+  padding: 20px 26px;
+  /* espaçamento interno da caixa */
+  margin-bottom: 70px;
+  /* espaçamento abaixo da caixa */
+}
+
+.apoie-pix-texto {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  /* espaçamento entre o ícone e o texto */
+  font-size: 1rem;
+  /* tamanho da fonte do texto */
+}
+
+.apoie-pix-texto strong {
+  color: #000000;
+}
+
+.apoie-pix-chave {
+  font-family: "Poppins", sans-serif;
+  background: #e0f3b9;
+  /* cor de fundo da chave PIX */
+  color: var(--ap-verde-escuro);
+  /* cor do texto da chave PIX */
+  padding: 4px 10px;
+  /* espaçamento interno da chave PIX */
+  border-radius: 6px;
+  /* cantos arredondados da chave PIX */
+}
+
+.apoie-pix-btn {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  /* peso da fonte do botão */
+  font-size: .9rem;
+  /* tamanho da fonte do botão */
+  background: var(--ap-verde-escuro);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: background .2s ease;
+  /* transição suave da cor de fundo ao passar o mouse */
+}
+
+.apoie-pix-btn:hover {
+  background: var(--ap-verde-folha);
+}
+
+/* ---------- Cabeçalho "Lojinha do Quintal" ---------- */
+
+.lojinha-header {
+  text-align: center;
+  margin-bottom: 44px;
+
+}
+
+.lojinha-header h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.lojinha-header span {
+  display: block;
+  font-size: 19px;
+  /* tamanho da fonte do subtítulo */
+  color: var(--ap-texto-suave);
+  margin-top: 12px;
+}
+
+/* ---------- Grade de produtos ---------- */
+
+.lojinha-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.produto-card {
+  background: var(--ap-branco);
+  border-radius: var(--ap-radius);
+  overflow: hidden;
+  box-shadow: var(--ap-sombra);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.produto-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, .14);
+}
+
+.produto-imagem {
+  width: 100%;
+  /* largura total do card */
+  aspect-ratio: 223/245;
+  /* mantém a proporção da imagem */
+  background: #e7e2d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.produto-imagem {
+  width: 100%;
+  aspect-ratio: 223/245;
+  background: #e7e2d6;
+  display: block;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.produto-imagem.sem-foto::before {
+  content: "📷 foto do produto";
+  font-family: "Inter", sans-serif;
+  font-size: .8rem;
+  color: #a49d8c;
+}
+
+.produto-info {
+  padding: 16px 18px 20px;
+  text-align: center;
+}
+
+.produto-info h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: .95rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+  line-height: 1.35;
+}
+
+.produto-info .preco {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--ap-verde-escuro);
+  font-size: .95rem;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width:900px) {
+  .lojinha-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .apoie-titulo {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width:560px) {
+  #apoie {
+    padding: 60px 0;
+  }
+
+  .apoie-container {
+    padding: 0 22px;
+  }
+
+  .lojinha-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .apoie-titulo {
+    font-size: 1.6rem;
+  }
+
+  .apoie-pix {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ===============================
+       SEÇÃO AGENDE SUA VISITA
+   =============================== */
+
+#visita {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("../img/Menu-AgendeSuaVisita/agende-sua-visita.jpg");
+  background-size: cover;
+  background-position: 10% 50%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+/* escurece só o suficiente pra garantir contraste do texto,
+   mais forte embaixo/esquerda onde fica o bloco de conteúdo */
+.visita-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg,
+      rgba(20, 26, 12, .72) 0%,
+      rgba(20, 26, 12, .55) 32%,
+      rgba(20, 26, 12, .15) 55%,
+      rgba(20, 26, 12, 0) 70%);
+}
+
+.visita-content {
+  position: relative;
+  z-index: 2;
+  max-width: 460px;
+  padding: 56px 40px;
+  color: var(--ap-branco);
+}
+
+.visita-titulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+
+.visita-titulo svg {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.visita-opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.visita-opcoes a {
+  display: block;
+  background: var(--ap-branco);
+  color: var(--ap-texto);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: .92rem;
+  text-align: center;
+  text-decoration: none;
+  width: 550px;
+  /* aumenta o comprimento horizontal */
+  min-height: 50px;
+  /* aumenta a altura */
+  padding: 13px 18px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
+  transition: background .2s ease, transform .2s ease, color .2s ease;
+}
+
+.visita-opcoes a:hover {
+  background: #fec321;
+  color: var(--ap-branco);
+  transform: translateY(-2px);
+}
+
+.visita-info {
+  font-size: .85rem;
+  line-height: 1.7;
+  color: #eef0e6;
+  margin-bottom: 22px;
+
+}
+
+.visita-info a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.visita-social {
+  display: flex;
+  gap: 14px;
+}
+
+.visita-social a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, .15);
+  backdrop-filter: blur(2px);
+  transition: transform .2s ease, background .2s ease;
+}
+
+.visita-social a:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, .28);
+}
+
+.visita-social svg {
+  width: 18px;
+  height: 18px;
+}
+
+.visita-credito {
+  position: absolute;
+  /* crédito da foto de fundo */
+  left: 40px;
+  /* distância da borda esquerda */
+  bottom: -80px;
+  /* distância da borda inferior */
+  z-index: 2;
+  /* fica acima do overlay */
+  font-size: .62rem;
+  /* tamanho da fonte do crédito */
+  color: rgba(255, 255, 255, .75);
+  font-family: "Poppins", sans-serif;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width:700px) {
+  #visita {
+    min-height: auto;
+  }
+
+  .visita-overlay {
+    background: linear-gradient(180deg,
+        rgba(20, 26, 12, .35) 0%,
+        rgba(20, 26, 12, .75) 45%,
+        rgba(20, 26, 12, .9) 100%);
+  }
+
+  .visita-content {
+    max-width: 100%;
+    padding: 44px 24px 60px;
+  }
+
+  .visita-titulo {
+    font-size: 1.3rem;
+  }
+}
+
+/* ---------- Rodapé ---------- */
+
+footer {
+  background: var(--ap-branco);
+  padding: 26px 20px;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+footer .footer-texto {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-family: "Inter", sans-serif;
+  font-size: .85rem;
+  color: var(--ap-texto-suave);
+}
+
+footer .footer-logo {
+  height: 16px;
+  width: auto;
+  vertical-align: middle;
+}
