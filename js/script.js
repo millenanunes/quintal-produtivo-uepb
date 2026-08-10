@@ -433,23 +433,17 @@ function copiarPix() {
 
 const secoes = document.querySelectorAll('section[id]');
 const linksMenu = document.querySelectorAll('nav a');
-const secoesVisiveis = new Map(); // id -> posição do topo da seção na tela
 
-const observerMenu = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    const id = entry.target.getAttribute('id');
-    if (entry.isIntersecting) {
-      secoesVisiveis.set(id, entry.boundingClientRect.top);
-    } else {
-      secoesVisiveis.delete(id);
+function atualizarMenuAtivo() {
+  const offset = 130; // um pouco abaixo do header fixo (ajuste se o header tiver outra altura)
+  let idAtivo = secoes[0].getAttribute('id');
+
+  secoes.forEach(secao => {
+    const top = secao.getBoundingClientRect().top;
+    if (top <= offset) {
+      idAtivo = secao.getAttribute('id');
     }
   });
-
-  if (secoesVisiveis.size === 0) return;
-
-  // escolhe a seção mais próxima do topo da faixa de detecção
-  const idAtivo = [...secoesVisiveis.entries()]
-    .sort((a, b) => a[1] - b[1])[0][0];
 
   linksMenu.forEach(link => {
     const estaAtivo = link.getAttribute('href') === `#${idAtivo}`;
@@ -460,12 +454,8 @@ const observerMenu = new IntersectionObserver((entries) => {
       link.removeAttribute('aria-current');
     }
   });
+}
 
-}, {
-    root: null,
-      rootMargin: '-130px 0px -60% 0px', // topo: compensa o header fixo (130px, igual ao scroll-margin-top); base: encolhe a área de detecção
-        threshold: 0
-  });
-
-secoes.forEach(secao => observerMenu.observe(secao));
-
+window.addEventListener('scroll', atualizarMenuAtivo);
+window.addEventListener('load', atualizarMenuAtivo);
+atualizarMenuAtivo();
