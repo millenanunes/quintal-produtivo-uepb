@@ -517,3 +517,38 @@ window.addEventListener('scroll', () => {
     marcarLinkAtivo(secoes[secoes.length - 1].id);
   }
 });
+
+// ===== Menu hambúrguer (mobile) =====
+
+(function () {
+  const botao = document.getElementById('menuToggle');
+  const menu = document.getElementById('navMenu');
+
+  if (!botao || !menu) return;
+
+  function alternarMenu() {
+    const aberto = menu.classList.toggle('aberto');
+    botao.classList.toggle('aberto', aberto);
+    botao.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+  }
+
+  botao.addEventListener('click', alternarMenu);
+
+  // Fecha o menu automaticamente ao clicar em um link
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('aberto');
+      botao.classList.remove('aberto');
+      botao.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Fecha o menu se a tela for redimensionada para desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      menu.classList.remove('aberto');
+      botao.classList.remove('aberto');
+      botao.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();

@@ -126,6 +126,7 @@ nav a {
   /* Define a espessura da fonte das seções (semi-negrito) */
   transition: none;
   /* Define uma transição suave de 0,3 segundos para as propriedades que mudam nas seções */
+  white-space: nowrap; 
 }
 
 nav a:hover {
@@ -1389,7 +1390,7 @@ p.page-sub {
 
 
 @media (prefers-reduced-motion: reduce) {
-    .ev-hex-inner {
+  .ev-hex-inner {
     animation: none !important;
   }
 }
@@ -2546,4 +2547,442 @@ footer .footer-logo {
   height: 16px;
   width: auto;
   vertical-align: middle;
+}
+
+/* ======================================================
+   RESPONSIVIDADE GERAL — bloco adicionado
+   ====================================================== */
+
+/* Garante que nenhuma mídia ultrapasse o container */
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- Botão hambúrguer (escondido no desktop) ---------- */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #9b6c3e;
+  border-radius: 2px;
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+.menu-toggle.aberto span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.aberto span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.aberto span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ======================================================
+   TABLET (até 1024px)
+   ====================================================== */
+
+@media (max-width: 1024px) {
+
+
+
+  .container {
+    width: 92%;
+  }
+
+  .sobre-imagem {
+    width: 45%;
+  }
+
+  .sobre-imagem img {
+    height: 100%;
+  }
+
+  .grid-setores {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ev-hero-grid {
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+  }
+
+  .lojinha-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ======================================================
+   TABLET / CELULAR GRANDE (até 880px)
+   ====================================================== */
+
+@media (max-width: 880px) {
+
+  .ev-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .ev-hive-stage {
+    display: none;
+  }
+
+  .ev-event-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .event-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  h1.page-title {
+    font-size: 2rem;
+  }
+}
+
+/* ======================================================
+   TABLET / CELULAR (até 768px)
+   ====================================================== */
+
+@media (max-width: 1100px) {
+
+  /* --- Menu --- */
+  header {
+    padding: 14px 20px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, .15);
+    padding: 90px 30px 30px;
+    transition: right .3s ease;
+    z-index: 1050;
+  }
+
+  nav#navMenu.aberto {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+}
+
+/* ======================================================
+   DESKTOP MENOR (até 1300px) — reduz o padding do header
+   ====================================================== */
+
+@media (max-width: 1300px) {
+
+  header {
+    padding: 18px 40px;
+  }
+
+  nav ul {
+    gap: 18px;
+  }
+
+  nav a {
+    font-size: 15px;
+  }
+}
+
+/* ======================================================
+   TABLET / CELULAR (até 768px)
+   ====================================================== */
+
+@media (max-width: 768px) {
+
+
+  /* --- Home / Slider --- */
+  .slider {
+    height: 420px;
+  }
+
+  .overlay1 {
+    white-space: normal;
+    width: 92%;
+  }
+
+  .overlay1 h1 {
+    font-size: 20px;
+  }
+
+  .overlay2 h2,
+  .overlay3 h2,
+  .overlay4 h2 {
+    font-size: 18px;
+  }
+
+  /* --- Sobre nós --- */
+  .sobre-conteudo {
+    flex-direction: column;
+  }
+
+  .sobre-imagem {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .sobre-imagem img {
+    height: auto;
+  }
+
+  .titulo-secao {
+    font-size: 16px;
+  }
+
+  /* --- Setores --- */
+  .grid-setores {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .titulo-setores {
+    font-size: 30px;
+  }
+
+  .modal-setor-conteudo {
+    padding: 30px 22px;
+  }
+
+  /* --- Equipe --- */
+  .equipe-page h1 {
+    font-size: 28px;
+  }
+
+  .equipe-page .subtitulo {
+    white-space: normal;
+    font-size: 15px;
+    padding: 0 10px;
+  }
+
+  .modal-card {
+    max-width: 90%;
+  }
+
+  /* --- Ações / Eventos --- */
+  .ev-event-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .eventos-wrap {
+    padding: 0 20px;
+  }
+
+  /* --- Parceiros --- */
+  .par-titulo {
+    font-size: 1.5rem;
+    padding: 12px 24px;
+  }
+
+  /* --- Apoie o projeto --- */
+  .lojinha-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .apoie-titulo {
+    font-size: 1.9rem;
+  }
+
+  .apoie-pix {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* --- Agende sua visita --- */
+  #visita {
+    min-height: auto;
+  }
+
+  .visita-overlay {
+    background: linear-gradient(180deg,
+        rgba(20, 26, 12, .35) 0%,
+        rgba(20, 26, 12, .75) 45%,
+        rgba(20, 26, 12, .9) 100%);
+  }
+
+  .visita-content {
+    max-width: 100%;
+    padding: 44px 24px 60px;
+  }
+
+  .visita-titulo {
+    font-size: 1.3rem;
+  }
+
+  .visita-opcoes a {
+    width: 100%;
+  }
+
+  .visita-credito {
+    position: static;
+    display: block;
+    margin-top: 20px;
+  }
+}
+
+/* ======================================================
+   CELULAR (até 480px)
+   ====================================================== */
+
+@media (max-width: 480px) {
+
+  .logo img {
+    width: 120px;
+  }
+
+  .slider {
+    height: 340px;
+  }
+
+  .overlay1 h1 {
+    font-size: 17px;
+  }
+
+  .overlay2 h2,
+  .overlay3 h2,
+  .overlay4 h2 {
+    font-size: 16px;
+  }
+
+  .emblema {
+    width: 180px;
+  }
+
+  .titulo-secao {
+    font-size: 14px;
+  }
+
+  .sobre-texto p,
+  .objetivos li {
+    font-size: 14px;
+  }
+
+  .grid-setores {
+    grid-template-columns: 1fr;
+  }
+
+  .titulo-setores {
+    font-size: 26px;
+  }
+
+  .frase-setores {
+    font-size: 15px;
+  }
+
+  .equipe-page {
+    padding: 48px 16px 60px;
+  }
+
+  .equipe-page h1 {
+    font-size: 22px;
+  }
+
+  .carrossel-viewport {
+    height: 250px;
+    padding: 20px 40px 0;
+  }
+
+  .membro {
+    width: 130px;
+  }
+
+  .membro.ativo .foto-container,
+  .membro.prox-1 .foto-container,
+  .membro.prox-2 .foto-container {
+    width: 140px;
+    height: 140px;
+  }
+
+  .seta {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  h1.page-title {
+    font-size: 1.6rem;
+  }
+
+  .ev-sub {
+    font-size: .95rem;
+  }
+
+  .ev-cat-list li a {
+    font-size: 1rem;
+    padding: 12px 4px;
+  }
+
+  .par-titulo {
+    font-size: 1.15rem;
+    padding: 10px 18px;
+  }
+
+  .lojinha-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .apoie-titulo {
+    font-size: 1.5rem;
+  }
+
+  .apoie-formas p {
+    font-size: 14px;
+  }
+
+  .visita-titulo {
+    font-size: 1.15rem;
+  }
+
+  .visita-opcoes a {
+    font-size: .85rem;
+    padding: 12px 14px;
+  }
+
+  .visita-social {
+    justify-content: center;
+  }
 }
