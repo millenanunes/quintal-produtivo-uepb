@@ -1093,6 +1093,13 @@ nav a.ativo {
     width: 140px;
   }
 
+  .membro.ativo .foto-container,
+  .membro.prox-1 .foto-container,
+  .membro.prox-2 .foto-container {
+    width: 130px;
+    height: 130px;
+  }
+
   .seta {
     width: 38px;
     height: 38px;
@@ -2945,8 +2952,8 @@ iframe {
   .membro.ativo .foto-container,
   .membro.prox-1 .foto-container,
   .membro.prox-2 .foto-container {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
   }
 
   .seta {

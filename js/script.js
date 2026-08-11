@@ -298,11 +298,12 @@ function distanciaCircular(i, centro, total) {
 function render() {
   const total = equipe.length;
   const cards = track.querySelectorAll('.membro');
+
   let espacamento = 220;
   if (window.innerWidth <= 480) {
-    espacamento = 100;
+    espacamento = 90;
   } else if (window.innerWidth <= 640) {
-    espacamento = 140;
+    espacamento = 120;
   }
 
   cards.forEach((card, i) => {
