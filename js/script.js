@@ -437,10 +437,6 @@ function copiarPix() {
   });
 }
 
-// ===== Menu ativo + scroll suave (versão corrigida) =====
-
-// ===== Menu ativo + scroll suave (versão corrigida) =====
-
 const header = document.querySelector('header');
 const secoes = document.querySelectorAll('section[id]');
 const linksMenu = document.querySelectorAll('nav a');
