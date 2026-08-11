@@ -556,8 +556,8 @@ window.addEventListener('scroll', () => {
       botao.setAttribute('aria-expanded', 'false');
     }
   });
-window.addEventListener('resize', () => {
-  render();
-});
+  window.addEventListener('resize', () => {
+    render();
+  });
 
 })();

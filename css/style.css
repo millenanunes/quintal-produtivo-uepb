@@ -126,7 +126,7 @@ nav a {
   /* Define a espessura da fonte das seções (semi-negrito) */
   transition: none;
   /* Define uma transição suave de 0,3 segundos para as propriedades que mudam nas seções */
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 
 nav a:hover {
@@ -2743,10 +2743,17 @@ iframe {
   .overlay1 {
     white-space: normal;
     width: 92%;
+    bottom: 30px;
   }
 
   .overlay1 h1 {
     font-size: 20px;
+  }
+
+  .overlay2,
+  .overlay3,
+  .overlay4 {
+    bottom: 30px;
   }
 
   .overlay2 h2,
@@ -2876,6 +2883,13 @@ iframe {
     height: 340px;
   }
 
+  .overlay1,
+  .overlay2,
+  .overlay3,
+  .overlay4 {
+    bottom: 20px;
+  }
+
   .overlay1 h1 {
     font-size: 17px;
   }
@@ -2983,17 +2997,18 @@ iframe {
   .visita-social {
     justify-content: center;
   }
-.apoie-pix-chave {
-  word-break: break-all;
-  font-size: .8rem;
-}
 
-.apoie-pix-texto {
-  flex-wrap: wrap;
-}
+  .apoie-pix-chave {
+    word-break: break-all;
+    font-size: .8rem;
+  }
 
-.apoie-pix-btn {
-  width: 100%;
-}
+  .apoie-pix-texto {
+    flex-wrap: wrap;
+  }
+
+  .apoie-pix-btn {
+    width: 100%;
+  }
 
 }
