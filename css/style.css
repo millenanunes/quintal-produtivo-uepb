@@ -2952,8 +2952,16 @@ iframe {
   .membro.ativo .foto-container,
   .membro.prox-1 .foto-container,
   .membro.prox-2 .foto-container {
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .membro .nome {
+    font-size: 11px;
+  }
+
+  .membro .cargo {
+    font-size: 10px;
   }
 
   .seta {
