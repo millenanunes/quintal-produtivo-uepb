@@ -1100,15 +1100,6 @@ nav a.ativo {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-
-  .membro,
-  .modal-card,
-  .modal-overlay {
-    transition: none !important;
-  }
-}
-
 /*===================
         AÇÕES
   ===================*/
@@ -1764,6 +1755,13 @@ p.page-sub {
   object-fit: contain;
   display: block;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .ev-thumb img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 
 .ev-body {
@@ -2985,4 +2983,17 @@ iframe {
   .visita-social {
     justify-content: center;
   }
+.apoie-pix-chave {
+  word-break: break-all;
+  font-size: .8rem;
+}
+
+.apoie-pix-texto {
+  flex-wrap: wrap;
+}
+
+.apoie-pix-btn {
+  width: 100%;
+}
+
 }

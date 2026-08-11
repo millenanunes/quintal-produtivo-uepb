@@ -298,7 +298,12 @@ function distanciaCircular(i, centro, total) {
 function render() {
   const total = equipe.length;
   const cards = track.querySelectorAll('.membro');
-  const espacamento = 220; // distância horizontal entre cada posição
+  let espacamento = 220;
+  if (window.innerWidth <= 480) {
+    espacamento = 100;
+  } else if (window.innerWidth <= 640) {
+    espacamento = 140;
+  }
 
   cards.forEach((card, i) => {
     const dist = distanciaCircular(i, ativo, total);
@@ -551,4 +556,8 @@ window.addEventListener('scroll', () => {
       botao.setAttribute('aria-expanded', 'false');
     }
   });
+window.addEventListener('resize', () => {
+  render();
+});
+
 })();
