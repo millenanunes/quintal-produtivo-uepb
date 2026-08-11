@@ -300,8 +300,8 @@ function render() {
   const cards = track.querySelectorAll('.membro');
 
   let espacamento = 220;
-  if (window.innerWidth <= 480) {
-    espacamento = 90;
+  if (window.innerWidth <= 280) {
+    espacamento = 50;
   } else if (window.innerWidth <= 640) {
     espacamento = 120;
   }
